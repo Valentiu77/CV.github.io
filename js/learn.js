@@ -1,31 +1,33 @@
-console.info(0);
+function learnVariables() {
+  console.info(0);
 
-function sayWelcome() {
-  console.info("Salut " + prenume + ", bine ai venit la noi!");
+  function sayWelcome() {
+    console.info("Salut " + prenume + ", bine ai venit la noi!");
+  }
+
+  var nume = "Stamate";
+  var prenume = "Valentiu";
+  var owner = "Valentiu's";
+  var msg1 = 'Ai zis "Nick?"';
+  var msg2 = 'Nu am zis "Nicolae"';
+  var template = `Test cu "ghilimele" sau 'simple'`;
+
+  console.debug("auzi..? dar cum te cheama? .." + prenume);
+  sayWelcome();
+
+  var skills = [`html`, `css`, `js`];
+
+  prenume = " Nick";
+
+  console.info("toate variabilele au fost initializate");
+  console.log(nume);
+  console.debug("cum te cheama? -" + prenume);
+
+  sayWelcome();
 }
-
-var nume = "Stamate";
-var prenume = "Valentiu";
-var owner = "Valentiu's";
-var msg1 = 'Ai zis "Nick?"';
-var msg2 = 'Nu am zis "Nicolae"';
-var template = `Test cu "ghilimele" sau 'simple'`;
-
-console.debug("auzi..? dar cum te cheama? .." + prenume);
-sayWelcome();
-
-var skills = [`html`, `css`, `js`];
-
-prenume = " Nick";
-
-console.info("toate variabilele au fost initializate");
-console.log(nume);
-console.debug("cum te cheama? -" + prenume);
-
-sayWelcome();
+// learnVariables ();
 
 //schimb valutar
-
 var cursEUR = 4.5;
 var myEUR = 20;
 var myRON = 0;
@@ -72,7 +74,6 @@ function extractFromATM(amount) {
   }
 
   funds = funds - totalExtract;
-  // ATMFunds = ATMFunds - ammount;
   ATMFunds -= amount;
   console.info(`comision aplicat:` + comision);
   console.info("sold curent: " + funds);
