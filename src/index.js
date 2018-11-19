@@ -8,18 +8,15 @@ function show (id) {
     $(id).style.display = 'block';
 }
 
+function hideElement(el) {
+    el.style.display= 'none';
+}
 
 function hideallPages (){
     var pages = document.querySelectorAll (".page-block");
-    pages.forEach(function(page){
-        console.info('hide: ' + page.id);
-        page.style.display = 'none';
-    })
-
-    // for(var i =0; i <pages.length; i++){
-    //     pages[i].style.display='none';
-    // }
+    pages.forEach(hideElement);
 }
+
 var links = document.querySelectorAll ("#top-menu-bar a");
 for(var i =0; i <links.length; i++){
     links[i].onclick = function() {
