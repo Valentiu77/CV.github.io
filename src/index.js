@@ -30,21 +30,21 @@ function initMenu() {
 
 function initSkillsPage() {
     var skills = [
-        ['js', 7, "Andrei"], 
-        ['HTML', 6, "Andreea"], 
-        ['css', 2, ""]
+        {name: 'js', endorsments: 7, endorsedBy: 'Andrei'},
+        {name: 'HTML', endorsments: 6, endorsedBy: ''},
+        {name: 'css', endorsments: 2, endorsedBy: ''}
     ];
     var resultlist = document.querySelector('#skills-page ul');
 
 var listItems = skills.map(function(skill) {
-    var endorseBy = '-Endorse by';
-    if (skill[2] == "") {
-        endorseBy = "";
+    var endorsedBy = '-Endorse by';
+    if (skill.endorsedBy == "") {
+        endorsedBy = "";
     }
-    var name =skill[0].toUpperCase();
+    var name =skill.name.toUpperCase();
     return `<li> ${name}
-        <span style="color: gray">- ${skill[1]}
-        ${endorseBy} </span> ${skill[2]}
+        <span style="color: gray">- ${skill.endorsments}
+        ${endorsedBy} </span> ${skill.endorsedBy}
         </li>`;
 })
     resultlist.innerHTML = listItems.join('');
