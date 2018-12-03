@@ -1,0 +1,13 @@
+form {
+    display: table;
+    background-color: #00FFFF;
+    padding: 20px;
+    border-style: solid;
+    margin: 20px;
+}
+body {
+    background-color: gray;
+}
+p {
+    color: blue;
+}
