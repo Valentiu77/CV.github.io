@@ -11,28 +11,28 @@ function initMenu() {
     }
 }
 
-function initSkillsPage() {
-    var skills = [
-        {name: 'js', endorsments: 7, endorsedBy: 'Andrei'},
-        {name: 'HTML', endorsments: 6, endorsedBy: ''},
-        {name: 'css', endorsments: 2, endorsedBy: ''}
-    ];
+function displaySkills (skills) {
     var resultlist = document.querySelector('#skills-page ul');
-
-var listItems = skills.map(function(skill) {
-    var endorsedBy = '-Endorse by';
-    if (skill.endorsedBy == "") {
-        endorsedBy = "";
+    var listItems = skills.map(function(skill) {
+        var endorsedBy = '-Endorse by';
+        if (skill.endorsedBy == "") {
+            endorsedBy = "";
+        }
+        var name =skill.name.toUpperCase();
+        return `<li> ${name}
+            <span style="color: gray">- ${skill.endorsments}
+            ${endorsedBy} </span> ${skill.endorsedBy}
+            </li>`;
+    })
+        resultlist.innerHTML = listItems.join('');
     }
-    var name =skill.name.toUpperCase();
-    return `<li> ${name}
-        <span style="color: gray">- ${skill.endorsments}
-        ${endorsedBy} </span> ${skill.endorsedBy}
-        </li>`;
-})
-    resultlist.innerHTML = listItems.join('');
+
+function initSkillsPage() {
+    $.ajax('data/skills.json').done(function(skills){
+        displaySkills(skills);
+    })
 }
 initMenu();
-
 $('#skills-page').show();
+$.ajax('data/skills.json');
 initSkillsPage();
